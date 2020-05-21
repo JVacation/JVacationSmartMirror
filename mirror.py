@@ -42,7 +42,6 @@ class FullscreenWindow:
         self.instructions2 = splash.Splash(self.bottomFrame,"Stand in front of the mirror until the mirror recognises you and loads your settings.", 28)
         self.instructions2.pack(side=BOTTOM, anchor=N, padx=100, pady=20)
         self.getUserName()
-        lbl = tk.Label(text="Hello World")
         thread1.start()
 
     def getUserName(self):
