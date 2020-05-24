@@ -1,0 +1,1 @@
+This is where images are uploaded to. Once measurements are stored the images are deleted

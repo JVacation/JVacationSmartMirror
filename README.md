@@ -54,8 +54,6 @@ Navigate to localhost:3000 in a browser and follow the steps shown
 
 If using a external device such as phone connect to the ip displayed on the mirror's main screen
 
-If there are any issues when adding photos it is possible Github deleted an empty directory. This is most likely the images folder inside webserver>public
-
 
 ##### Changing Security Settings #####
 
