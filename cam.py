@@ -12,8 +12,6 @@ import os.path
 
 # Capture frames from Camera #
 cap = cv2.VideoCapture(0)
-
-
 medText = 28
 
 
@@ -27,6 +25,9 @@ image_path = "./security/"
 start = datetime.time(10, 15)
 end = datetime.time(11)
 
+
+
+# Some code used from https://github.com/ageitgey/face_recognition/blob/master/examples/facerec_from_webcam_faster.py # 
 
 class Cam(Frame):
     def __init__(self, parent, event_name="", *args, **kwargs):
@@ -58,15 +59,18 @@ class Cam(Frame):
         known_face_encodings = np.array(list(all_face_encodings.values()))
         known_face_names = list(all_face_encodings.keys())
 
+        # Open CV resizing and changing the colour of the frame #
         ret, frame = cap.read()
         small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
         rgb_small_frame = small_frame[:, :, ::-1]
         if process_this_frame:
+            # Reading face locations and encodings #
             face_locations = face_recognition.face_locations(rgb_small_frame)
             face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
             face_names = []
             name = "No User Detected"
             self.userName.config(text = name)
+            # Checking if Face measurements match to ones in dataset_faces.dat #
             for face_encoding in face_encodings:
                 matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
                 name = "Unknown"
@@ -77,9 +81,10 @@ class Cam(Frame):
                     name = known_face_names[best_match_index]
                     self.userName.config(text = name)
                 else:
-                     # Unknown user detected during time range #
+                    # Unknown user detected during time range #
                     timestamp = datetime.datetime.now().time()
                     check = start <= timestamp <= end
+                    # If user is unknown and the time is in the time range - Save the frame #
                     if check == True:
                         timestamp2 = datetime.datetime.now()
                         timestampStr = timestamp2.strftime("%d_%b_%Y__%H_%M_%S")
@@ -92,6 +97,7 @@ class Cam(Frame):
                         cv2.imwrite(filepath, frame)
                 face_names.append(name)
         process_this_frame = not process_this_frame
+        # Used for Camera preview #
         for (top, right, bottom, left), name in zip(face_locations, face_names):
             top *= 4
             right *= 4

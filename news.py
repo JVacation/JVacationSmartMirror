@@ -13,8 +13,10 @@ class News(Frame):
             self.newsLbl.pack(side=TOP, anchor=E)
         self.breakingNews = Frame(self, bg="black")
         self.breakingNews.pack(side=TOP)
+        # Calls news #
         self.getBreakingNews(event_name, category)
 
+    # Used for getting news headlines from a category and packs them into a container #
     def getBreakingNews(self, event_name="", category=""):
         try:
             for widget in self.breakingNews.winfo_children():
@@ -24,6 +26,7 @@ class News(Frame):
             else:
                 newsURL = "https://news.google.com/news/headlines/section/topic/%s?ned=gb&output=rss" % category
             newsFeed = feedparser.parse(newsURL)
+            # Goes through the top 5 news entries #
             for post in newsFeed.entries[0:5]:
                 newsLine = retrieveNewsLine(self.breakingNews, post.title, event_name)
                 if event_name == "left": 
@@ -34,6 +37,7 @@ class News(Frame):
             traceback.print_exc()
             print (("%s UNABLE TO RETRIEVE NEWS" % e))
 
+# Packs the headline into a frame so it is displayed clearly # 
 class retrieveNewsLine(Frame):
     def __init__(self, parent, postName="", event_name=""):
         Frame.__init__(self, parent, bg='black')

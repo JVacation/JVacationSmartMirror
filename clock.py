@@ -5,14 +5,14 @@ from contextlib import contextmanager
 
 lockLocale = threading.Lock()
 
-formatTime = 24 # 12 or 24
+formatTime = 24 # 12 hour or 24 hour
 formatDate = "%d %b, %Y"
 largeText = 48
 smallText = 18
-timeZone = '' # e.g. 'fr_FR' fro French, '' as default
+timeZone = ''
 
 @contextmanager
-def setlocale(name): #thread proof function to work with locale
+def setlocale(name):
     with lockLocale:
         saved = locale.setlocale(locale.LC_ALL)
         try:
@@ -23,15 +23,15 @@ def setlocale(name): #thread proof function to work with locale
 class Clock(Frame):
     def __init__(self, parent, *args, **kwargs):
         Frame.__init__(self, parent, bg='black')
-        # initialize day of week
+        # Day of the week #
         self.dayOfWeek = ''
         self.dayOfWeekLbl = Label(self, text=self.dayOfWeek, font=('Helvetica', smallText), fg="white", bg="black")
         self.dayOfWeekLbl.pack(side=TOP)
-        # initialize date
+        # Date #
         self.date = ''
         self.dateLbl = Label(self, text=self.date, font=('Helvetica', smallText), fg="white", bg="black")
         self.dateLbl.pack()
-        # initialize date time
+        # time #
         self.time = ''
         self.timeLbl = Label(self, font=('Helvetica', largeText), fg="white", bg="black")
         self.timeLbl.pack(side=TOP)
@@ -54,7 +54,5 @@ class Clock(Frame):
             if date2 != self.date:
                 self.date = date2
                 self.dateLbl.config(text=date2)
-            # calls itself every 200 milliseconds
-            # to update the time display as needed
-            # could use >200 ms, but display gets jerky
+            # Calls itself every 200ms to update without acting strange #
             self.timeLbl.after(200, self.updateTime)
