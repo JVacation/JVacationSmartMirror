@@ -39,11 +39,20 @@ TO USE THE WEBCAM VIA EXTENSION PACK GO TO THE VIRTUAL MACHINE TOOLBAR>DEVICES>W
 
 9) sudo npm install socket.io --save
 
-Well done it should now be installed.
-
-10 ) CD back to the main directory (JVacatonSmartMirror-master) and to launch the mirror run:
+10) CD back to the main directory (JVacatonSmartMirror-master) and to launch the mirror run:
 
 11) python3 mirror.py
+
+The smart mirror should now start up.
+
+To disable the camera preview open mirror.py with a code editor and change:
+
+enableCameraPreview = "enable"
+
+to:
+
+enableCameraPreview = "disable"
+
 
 If it comes up with can't open camera by index it means a camera is not detected. Please follow the Virtualbox extension guide above.
 
