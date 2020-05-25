@@ -33,7 +33,7 @@ sudo apt-get update
 
 sudo apt install nodejs
 
-sudo apt install np
+sudo apt install npm
 
 Followed by:
 
