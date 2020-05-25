@@ -33,7 +33,7 @@ TO USE THE WEBCAM VIA EXTENSION PACK GO TO THE VIRTUAL MACHINE TOOLBAR>DEVICES>W
 
 6) sudo apt-get update
 
-7)sudo apt install nodejs
+7) sudo apt install nodejs
 
 8) sudo apt install npm
 
