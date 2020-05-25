@@ -21,34 +21,29 @@ TO USE THE WEBCAM VIA EXTENSION PACK GO TO THE VIRTUAL MACHINE TOOLBAR>DEVICES>W
 
 ###### Installing the Software ######
 
-Extract the project to the Desktop.
+1) Extract the project to the Desktop.
 
-Open a Terminal and type: CD Desktop/JVacationSmartMirror-master/
+2) Open a Terminal and type: CD Desktop/JVacationSmartMirror-master/
 
-sudo apt-get install cmake
+3) sudo apt-get install cmake
 
-pip3 install -r requirements.txt
+4) pip3 install -r requirements.txt // This step can take a while so go make a brew and come back.
 
-This step can take a while so go make a brew and come back.
+5) Once completed type: cd webserver
 
-Once completed type: cd webserver
+6) sudo apt-get update
 
-Run:
+7)sudo apt install nodejs
 
-sudo apt-get update
+8) sudo apt install npm
 
-sudo apt install nodejs
-
-sudo apt install npm
-
-Followed by:
-
-sudo npm install socket.io --save
+9) sudo npm install socket.io --save
 
 Well done it should now be installed.
 
-CD back to the main directory (JVacatonSmartMirror-master) and to launch the mirror run:
-python3 mirror.py
+10 ) CD back to the main directory (JVacatonSmartMirror-master) and to launch the mirror run:
+
+11) python3 mirror.py
 
 If it comes up with can't open camera by index it means a camera is not detected. Please follow the Virtualbox extension guide above.
 
