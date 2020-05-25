@@ -12,10 +12,9 @@ Project video here: https://www.youtube.com/watch?v=BgjUwgD4-U4
 
 ##### Web Cam Support ######
 
-SOME WEBCAMS DO NOT SHIP WITH DRIVERS FOR RASPBIAN. TO USE A USB WEBCAM OR BUILT IN WEBCAM WITH VIRTUAL BOX USE THE VIRTUAL BOX EXTENSION PACK
-https://www.virtualbox.org/wiki/Download_Old_Builds_6_0 MAKE SURE YOU GET THE SAME VERSION OF EXTENSION PACK AS YOUR VIRTUAL BOX INSTALLATION
+Some webcams do not ship with drivers for raspbian. To use a usb webcam or built in webcam with virtual box use the virtual box extension pack. https://www.Virtualbox.Org/wiki/download_old_builds_6_0 make sure you get the same version of extension pack as your virtual box installation
 
-TO USE THE WEBCAM VIA EXTENSION PACK GO TO THE VIRTUAL MACHINE TOOLBAR>DEVICES>WEBCAMS>SELECT WEBCAM
+To use the webcam via extension pack go to the virtual machine toolbar > devices > webcams > select webcam
 
 
 
