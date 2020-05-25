@@ -8,10 +8,16 @@ Raspberry Pi Desktop: https://www.raspberrypi.org/downloads/raspberry-pi-desktop
 On instructions to install Raspberry Pi Desktop follow:
 https://thepi.io/how-to-run-raspberry-pi-desktop-on-windows-or-macos/
 
+
+
+##### Web Cam Support ######
+
 SOME WEBCAMS DO NOT SHIP WITH DRIVERS FOR RASPBIAN. TO USE A USB WEBCAM OR BUILT IN WEBCAM WITH VIRTUAL BOX USE THE VIRTUAL BOX EXTENSION PACK
 https://www.virtualbox.org/wiki/Download_Old_Builds_6_0 MAKE SURE YOU GET THE SAME VERSION OF EXTENSION PACK AS YOUR VIRTUAL BOX INSTALLATION
 
 TO USE THE WEBCAM VIA EXTENSION PACK GO TO THE VIRTUAL MACHINE TOOLBAR>DEVICES>WEBCAMS>SELECT WEBCAM
+
+
 
 ###### Installing the Software ######
 
@@ -48,11 +54,14 @@ If it comes up with can't open camera by index it means a camera is not detected
 
 Test: Use the camera on a picture of Joe Biden. He is the figure stored to ensure that the system is working.
 
+
+
 ###### Adding users ######
 
 Navigate to localhost:3000 in a browser and follow the steps shown
 
 If using a external device such as phone connect to the ip displayed on the mirror's main screen
+
 
 
 ##### Changing Security Settings #####
