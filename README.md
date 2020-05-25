@@ -8,7 +8,7 @@ Raspberry Pi Desktop: https://www.raspberrypi.org/downloads/raspberry-pi-desktop
 On instructions to install Raspberry Pi Desktop follow:
 https://thepi.io/how-to-run-raspberry-pi-desktop-on-windows-or-macos/
 
-
+Project video here: https://www.youtube.com/watch?v=BgjUwgD4-U4
 
 ##### Web Cam Support ######
 
