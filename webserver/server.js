@@ -15,11 +15,12 @@ var filepath = "./webserver/public/images/";
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
-
+// Send Index page
 app.get('/', function (req, res) {
     res.sendFile(INDEX)
 })
 
+// Post request for turning form into json file
 app.post('/contact', urlencodedParser, function (req, res) {
     console.log(req.body);
     filepath = "./webserver/public/images/";
@@ -49,6 +50,7 @@ app.post('/contact', urlencodedParser, function (req, res) {
     res.redirect('submit.html');
 })
 
+// used for photo upload
 var Storage = multer.diskStorage({
     destination: function(req, file, callback) {
         callback(null, filepath);
@@ -62,6 +64,7 @@ var upload = multer({
     storage: Storage
 }).array("imgUploader", 3); //Field name and max count
 
+// post request for uploading photos
 app.post("/api/Upload", function(req, res) {
      upload(req, res, function(err) {
          if (err) {
@@ -71,6 +74,7 @@ app.post("/api/Upload", function(req, res) {
      });
  });
 
+// Runs facial.py via python shell
 app.post("/complete", function(req, res) {
     PythonShell.run('./webserver/facial.py', null, function (err){
         if (err) throw err;
